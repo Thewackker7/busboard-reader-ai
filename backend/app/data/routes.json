@@ -1,0 +1,153 @@
+{
+  "data_status": "verified_routes",
+  "data_verified": true,
+  "service_end": "2026-11-05",
+  "coverage_complete": false,
+  "coverage_reason": "This is a curated, source-backed route record rather than a complete statewide service feed. A missing journey must remain inconclusive.",
+  "source": "Curated route evidence: Kerala State Road Transport Corporation official post, with a recent community operating-status confirmation.",
+  "notice": "One source-backed KSRTC route record is installed and was last confirmed for operation on 2026-08-07. It is not a live timetable or a complete Kerala-wide feed; confirm the service and timings with KSRTC before travel. The remaining demo paths are kept as non-verifying test fixtures. The private-bus JSON is not served because its upstream repository has no reuse license.",
+  "stop_aliases": {
+    "Ottapalam": [
+      "ottapalam",
+      "ottappalam",
+      "ഒറ്റപ്പാലം"
+    ],
+    "Lakkidi": [
+      "lakkidi",
+      "ലക്കിടി"
+    ],
+    "Mannannur": [
+      "mannannur",
+      "മണ്ണാനൂർ"
+    ],
+    "Shoranur": [
+      "shoranur",
+      "shornur",
+      "ഷൊർണൂർ"
+    ],
+    "Wadakkanchery": [
+      "wadakkanchery",
+      "wadakanchery",
+      "വടക്കാഞ്ചേരി"
+    ],
+    "Thrissur": [
+      "thrissur",
+      "trichur",
+      "തൃശ്ശൂർ"
+    ],
+    "Palakkad": [
+      "palakkad",
+      "പാലക്കാട്"
+    ],
+    "Kanyakumari": [
+      "kanyakumari",
+      "kanyakumari bus stand",
+      "cape comorin",
+      "കന്യാകുമാരി",
+      "kanyakuamri"
+    ],
+    "Angamaly": ["angamaly"],
+    "Vyttila Hub": ["vyttila hub", "vytilla hub", "vyttila", "vytilla"],
+    "Alappuzha": ["alappuzha", "alleppey"],
+    "Kollam": ["kollam", "quilon"],
+    "Kazhakkoottam": ["kazhakkoottam", "kazhakuttam"],
+    "Thiruvananthapuram": ["thiruvananthapuram", "trivandrum", "tvm"],
+    "Neyyattinkara": ["neyyattinkara"],
+    "Kaliyakkavilai": ["kaliyakkavilai", "kaliyakkavila"],
+    "Nagercoil": ["nagercoil", "nagarcoil"],
+    "Parali": [
+      "parali",
+      "parli",
+      "പറളി"
+    ],
+    "Manakara": [
+      "manakara",
+      "മണക്കര"
+    ],
+    "Thenur": [
+      "thenur",
+      "thenoor",
+      "തേന്നൂർ"
+    ]
+  },
+  "routes": [
+    {
+      "id": "ksrtc-palakkad-kanyakumari-minnal-deluxe",
+      "operator": "Kerala State Road Transport Corporation (KSRTC)",
+      "route_name": "Palakkad–Kanyakumari Minnal Deluxe",
+      "board_destinations": ["Kanyakumari", "Kanniyakumari", "Kanyakumari Minnal Deluxe"],
+      "stops": ["Palakkad", "Thrissur", "Angamaly", "Vyttila Hub", "Alappuzha", "Kollam", "Kazhakkoottam", "Thiruvananthapuram", "Neyyattinkara", "Kaliyakkavilai", "Nagercoil", "Kanyakumari"],
+      "verified": true,
+      "valid_from": "2026-08-07",
+      "valid_to": "2026-11-05",
+      "source": "KSRTC official route announcement",
+      "source_name": "Kerala State Road Transport Corporation official LinkedIn post",
+      "source_url": "https://pe.linkedin.com/posts/kerala-state-road-transport-corporation-official_ksrtc-cmd-palakkad-activity-7243868735252414464-2ttL",
+      "current_confirmation_name": "KBuses community operating-status listing",
+      "current_confirmation_url": "https://www.kbuses.in/v3/travelbook/bus/1930PLKCAPE/route/3126/from/Palakkad/to/Kanyakumari",
+      "last_verified_at": "2026-08-07",
+      "verification_method": "Official route/stops cross-checked against a recent community operating-status report",
+      "demo_only": false
+    },
+    {
+      "id": "demo-ottapalam-thrissur",
+      "board_destinations": [
+        "Thrissur",
+        "Trichur",
+        "തൃശ്ശൂർ"
+      ],
+      "stops": [
+        "Ottapalam",
+        "Lakkidi",
+        "Mannannur",
+        "Shoranur",
+        "Wadakkanchery",
+        "Thrissur"
+      ],
+      "demo_only": true
+    },
+    {
+      "id": "demo-ottapalam-shoranur",
+      "board_destinations": [
+        "Shoranur",
+        "Shornur",
+        "ഷൊർണൂർ"
+      ],
+      "stops": [
+        "Ottapalam",
+        "Lakkidi",
+        "Mannannur",
+        "Shoranur"
+      ],
+      "demo_only": true
+    },
+    {
+      "id": "demo-shoranur-thrissur",
+      "board_destinations": [
+        "Thrissur",
+        "Trichur",
+        "തൃശ്ശൂർ"
+      ],
+      "stops": [
+        "Shoranur",
+        "Wadakkanchery",
+        "Thrissur"
+      ],
+      "demo_only": true
+    },
+    {
+      "id": "demo-ottapalam-palakkad",
+      "board_destinations": [
+        "Palakkad",
+        "പാലക്കാട്"
+      ],
+      "stops": [
+        "Ottapalam",
+        "Lakkidi",
+        "Mannannur",
+        "Palakkad"
+      ],
+      "demo_only": true
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+[
+  {
+    "name": "Alappuzha",
+    "district": "Alappuzha",
+    "id": "place:alappuzha"
+  },
+  {
+    "name": "Cherthala",
+    "district": "Alappuzha",
+    "id": "place:cherthala"
+  },
+  {
+    "name": "Chengannur",
+    "district": "Alappuzha",
+    "id": "place:chengannur"
+  },
+  {
+    "name": "Haripad",
+    "district": "Alappuzha",
+    "id": "place:haripad"
+  },
+  {
+    "name": "Wayanad",
+    "district": "Wayanad",
+    "id": "place:wayanad"
+  },
+  {
+    "name": "Kalpetta",
+    "district": "Wayanad",
+    "id": "place:kalpetta"
+  },
+  {
+    "name": "Mananthavady",
+    "district": "Wayanad",
+    "id": "place:mananthavady"
+  },
+  {
+    "name": "Sulthan Bathery",
+    "district": "Wayanad",
+    "id": "place:sulthan-bathery"
+  },
+  {
+    "name": "Vythiri",
+    "district": "Wayanad",
+    "id": "place:vythiri"
+  },
+  {
+    "name": "Kannur",
+    "district": "Kannur",
+    "id": "place:kannur"
+  },
+  {
+    "name": "Thalassery",
+    "district": "Kannur",
+    "id": "place:thalassery"
+  },
+  {
+    "name": "Payyannur",
+    "district": "Kannur",
+    "id": "place:payyannur"
+  },
+  {
+    "name": "Mattannur",
+    "district": "Kannur",
+    "id": "place:mattannur"
+  },
+  {
+    "name": "Kasaragod",
+    "district": "Kasaragod",
+    "id": "place:kasaragod"
+  },
+  {
+    "name": "Kanhangad",
+    "district": "Kasaragod",
+    "id": "place:kanhangad"
+  },
+  {
+    "name": "Uppala",
+    "district": "Kasaragod",
+    "id": "place:uppala"
+  },
+  {
+    "name": "Nileshwaram",
+    "district": "Kasaragod",
+    "id": "place:nileshwaram"
+  },
+  {
+    "name": "Kochi",
+    "district": "Ernakulam",
+    "id": "place:kochi"
+  },
+  {
+    "name": "Ernakulam",
+    "district": "Ernakulam",
+    "id": "place:ernakulam"
+  },
+  {
+    "name": "Aluva",
+    "district": "Ernakulam",
+    "id": "place:aluva"
+  },
+  {
+    "name": "Muvattupuzha",
+    "district": "Ernakulam",
+    "id": "place:muvattupuzha"
+  },
+  {
+    "name": "Perumbavoor",
+    "district": "Ernakulam",
+    "id": "place:perumbavoor"
+  },
+  {
+    "name": "North Paravur",
+    "district": "Ernakulam",
+    "id": "place:north-paravur"
+  },
+  {
+    "name": "Idukki",
+    "district": "Idukki",
+    "id": "place:idukki"
+  },
+  {
+    "name": "Thodupuzha",
+    "district": "Idukki",
+    "id": "place:thodupuzha"
+  },
+  {
+    "name": "Munnar",
+    "district": "Idukki",
+    "id": "place:munnar"
+  },
+  {
+    "name": "Kattappana",
+    "district": "Idukki",
+    "id": "place:kattappana"
+  },
+  {
+    "name": "Adimali",
+    "district": "Idukki",
+    "id": "place:adimali"
+  },
+  {
+    "name": "Kollam",
+    "district": "Kollam",
+    "id": "place:kollam"
+  },
+  {
+    "name": "Punalur",
+    "district": "Kollam",
+    "id": "place:punalur"
+  },
+  {
+    "name": "Karunagappally",
+    "district": "Kollam",
+    "id": "place:karunagappally"
+  },
+  {
+    "name": "Kottarakkara",
+    "district": "Kollam",
+    "id": "place:kottarakkara"
+  },
+  {
+    "name": "Paravur",
+    "district": "Kollam",
+    "id": "place:paravur"
+  },
+  {
+    "name": "Kottayam",
+    "district": "Kottayam",
+    "id": "place:kottayam"
+  },
+  {
+    "name": "Changanassery",
+    "district": "Kottayam",
+    "id": "place:changanassery"
+  },
+  {
+    "name": "Pala",
+    "district": "Kottayam",
+    "id": "place:pala"
+  },
+  {
+    "name": "Vaikom",
+    "district": "Kottayam",
+    "id": "place:vaikom"
+  },
+  {
+    "name": "Ettumanoor",
+    "district": "Kottayam",
+    "id": "place:ettumanoor"
+  },
+  {
+    "name": "Kozhikode",
+    "district": "Kozhikode",
+    "id": "place:kozhikode"
+  },
+  {
+    "name": "Vadakara",
+    "district": "Kozhikode",
+    "id": "place:vadakara"
+  },
+  {
+    "name": "Koyilandy",
+    "district": "Kozhikode",
+    "id": "place:koyilandy"
+  },
+  {
+    "name": "Thamarassery",
+    "district": "Kozhikode",
+    "id": "place:thamarassery"
+  },
+  {
+    "name": "Feroke",
+    "district": "Kozhikode",
+    "id": "place:feroke"
+  },
+  {
+    "name": "Malappuram",
+    "district": "Malappuram",
+    "id": "place:malappuram"
+  },
+  {
+    "name": "Manjeri",
+    "district": "Malappuram",
+    "id": "place:manjeri"
+  },
+  {
+    "name": "Tirur",
+    "district": "Malappuram",
+    "id": "place:tirur"
+  },
+  {
+    "name": "Ponnani",
+    "district": "Malappuram",
+    "id": "place:ponnani"
+  },
+  {
+    "name": "Perinthalmanna",
+    "district": "Malappuram",
+    "id": "place:perinthalmanna"
+  },
+  {
+    "name": "Nilambur",
+    "district": "Malappuram",
+    "id": "place:nilambur"
+  },
+  {
+    "name": "Palakkad",
+    "district": "Palakkad",
+    "id": "place:palakkad"
+  },
+  {
+    "name": "Ottapalam",
+    "district": "Palakkad",
+    "id": "place:ottapalam"
+  },
+  {
+    "name": "Shoranur",
+    "district": "Palakkad",
+    "id": "place:shoranur"
+  },
+  {
+    "name": "Mannarkkad",
+    "district": "Palakkad",
+    "id": "place:mannarkkad"
+  },
+  {
+    "name": "Chittur",
+    "district": "Palakkad",
+    "id": "place:chittur"
+  },
+  {
+    "name": "Parali",
+    "district": "Palakkad",
+    "id": "place:parali"
+  },
+  {
+    "name": "Manakara",
+    "district": "Palakkad",
+    "id": "place:manakara"
+  },
+  {
+    "name": "Thenur",
+    "district": "Palakkad",
+    "id": "place:thenur"
+  },
+  {
+    "name": "Pathanamthitta",
+    "district": "Pathanamthitta",
+    "id": "place:pathanamthitta"
+  },
+  {
+    "name": "Adoor",
+    "district": "Pathanamthitta",
+    "id": "place:adoor"
+  },
+  {
+    "name": "Thiruvalla",
+    "district": "Pathanamthitta",
+    "id": "place:thiruvalla"
+  },
+  {
+    "name": "Ranni",
+    "district": "Pathanamthitta",
+    "id": "place:ranni"
+  },
+  {
+    "name": "Pandalam",
+    "district": "Pathanamthitta",
+    "id": "place:pandalam"
+  },
+  {
+    "name": "Thiruvananthapuram",
+    "district": "Thiruvananthapuram",
+    "id": "place:thiruvananthapuram"
+  },
+  {
+    "name": "Neyyattinkara",
+    "district": "Thiruvananthapuram",
+    "id": "place:neyyattinkara"
+  },
+  {
+    "name": "Attingal",
+    "district": "Thiruvananthapuram",
+    "id": "place:attingal"
+  },
+  {
+    "name": "Varkala",
+    "district": "Thiruvananthapuram",
+    "id": "place:varkala"
+  },
+  {
+    "name": "Nedumangad",
+    "district": "Thiruvananthapuram",
+    "id": "place:nedumangad"
+  },
+  {
+    "name": "Thrissur",
+    "district": "Thrissur",
+    "id": "place:thrissur"
+  },
+  {
+    "name": "Chalakudy",
+    "district": "Thrissur",
+    "id": "place:chalakudy"
+  },
+  {
+    "name": "Irinjalakuda",
+    "district": "Thrissur",
+    "id": "place:irinjalakuda"
+  },
+  {
+    "name": "Wadakkanchery",
+    "district": "Thrissur",
+    "id": "place:wadakkanchery"
+  },
+  {
+    "name": "Guruvayur",
+    "district": "Thrissur",
+    "id": "place:guruvayur"
+  },
+  {
+    "name": "Kodungallur",
+    "district": "Thrissur",
+    "id": "place:kodungallur"
+  },
+  {
+    "name": "Kanyakumari",
+    "district": "Kanyakumari",
+    "state": "Tamil Nadu",
+    "id": "place:kanyakumari"
+  }
+]

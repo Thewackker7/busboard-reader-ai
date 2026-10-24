@@ -1,0 +1,11 @@
+.env
+.venv/
+.venv-win/
+__pycache__/
+.pytest_cache/
+.pytest-tmp/
+*.bak
+backend/app/data/private_bus_schedules.json.gz
+node_modules/
+dist/
+.DS_Store
