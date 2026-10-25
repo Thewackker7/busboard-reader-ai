@@ -16,14 +16,15 @@ BUS_BOARD_SCHEMA: dict[str, Any] = {
     "type": "object",
     "properties": {
         "detected_text": {"type": "string"},
+        "route_english": {"type": "string"},
         "destination_english": {"type": "string"},
         "recognition_uncertain": {"type": "boolean"},
         "notes": {"type": "string"},
     },
-    "required": ["detected_text", "destination_english", "recognition_uncertain", "notes"],
+    "required": ["detected_text", "route_english", "destination_english", "recognition_uncertain", "notes"],
 }
 
-PROMPT = """Transcribe the visible destination/route text from this bus board, preserving the original script and spelling in detected_text. If it shows two known places, retain both names and the separator. Give an English translation only when you can read it; do not invent a missing name, route, stop, confidence score, or service. Set recognition_uncertain true if key letters are unreadable or multiple readings are plausible. Keep uncertainty details in notes. Return the requested JSON only."""
+PROMPT = """Read the visible destination/route text from this bus board. Keep the exact visible script and spelling in detected_text. Always provide route_english as an English transliteration or translation of the complete visible route text when it is readable: for example, Malayalam place names must become their conventional English place names, while preserving both endpoints and any separator. Set destination_english to the final destination in English. Do not invent a missing name, route, stop, confidence score, or service. Set recognition_uncertain true if key letters are unreadable or multiple readings are plausible. Keep uncertainty details in notes. Return the requested JSON only."""
 
 class VisionError(RuntimeError):
     """A frontend-safe recognition failure with an appropriate HTTP status."""
@@ -39,12 +40,16 @@ def _demo_enabled() -> bool:
 
 def _normalise_result(result: dict[str, Any]) -> dict[str, Any]:
     original = str(result.get("detected_text") or "").strip()
+    route_english = str(result.get("route_english") or "").strip()
     english = str(result.get("destination_english") or "").strip()
     if not original and english:
         original = english
     return {
         "detected_text": original,
         "original_transcription": original,
+        # This is used for matching only. The UI continues to show
+        # detected_text, so users can review exactly what was printed.
+        "route_english": route_english or None,
         "destination_english": english or None,
         "confidence": None,
         "recognition_uncertain": result.get("recognition_uncertain") is True,
@@ -82,6 +87,7 @@ async def read_bus_board(image_bytes: bytes, mime_type: str, *, demo_destination
             "confidence": None,
             "recognition_uncertain": not bool(destination),
             "destination_english": destination or None,
+            "route_english": destination or None,
             "notes": "Simulated recognition; Gemini was not called.",
             "provider": "demo",
             "demo_mode": True,

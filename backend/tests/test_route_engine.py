@@ -111,6 +111,17 @@ def test_source_backed_palakkad_kanyakumari_record_matches_unseparated_board_tex
     assert result["route_evidence"]["last_verified_at"] == "2026-08-07"
 
 
+def test_malayalam_board_uses_english_route_interpretation_for_matching():
+    data = current_route_data(stops=["Palakkad", "Kanyakumari"], board_destination="Kanyakumari")
+    result = verify_journey(
+        "Palakkad", "Kanyakumari", "പാലക്കാട് - കന്യാകുമാരി", data,
+        english_route="Palakkad - Kanyakumari", english_destination="Kanyakumari",
+    )
+    assert result["status"] == "match"
+    assert result["board_text_original"] == "പാലക്കാട് - കന്യാകുമാരി"
+    assert result["board_text_english"] == "Palakkad - Kanyakumari"
+
+
 def test_mismatch_requires_one_identified_current_route_and_correct_direction():
     data = current_route_data(stops=["Palakkad", "Manakara", "Ottapalam"])
     data["coverage_complete"] = True

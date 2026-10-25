@@ -246,12 +246,17 @@ def _route_segment(route: dict[str, Any], start: str, destination: str, aliases:
     return None
 
 
-def find_matching_route(origin: str, destination: str, board_text: str, route_data: dict[str, Any], *, english_destination: str | None = None, today: date | None = None) -> tuple[dict[str, Any] | None, list[dict[str, Any]], str | None]:
+def find_matching_route(origin: str, destination: str, board_text: str, route_data: dict[str, Any], *, english_destination: str | None = None, english_route: str | None = None, today: date | None = None) -> tuple[dict[str, Any] | None, list[dict[str, Any]], str | None]:
     today = today or date.today()
     aliases = route_data.get("stop_aliases", {})
     origin_name = canonical_stop(origin, aliases)
     destination_name = canonical_stop(destination, aliases)
-    parsed = parse_board_route(board_text, aliases, english_destination)
+    # OCR may correctly preserve Malayalam while our route records use
+    # canonical English names. Gemini's separate English route interpretation
+    # is therefore the matching input; the original board text is retained for
+    # review and is used whenever no translation is available.
+    matching_text = english_route.strip() if english_route and english_route.strip() else board_text
+    parsed = parse_board_route(matching_text, aliases, english_destination)
     if not origin_name or not destination_name:
         return None, [], "The selected origin or destination could not be resolved to a known place or stop."
     if origin_name == destination_name:
@@ -261,7 +266,7 @@ def find_matching_route(origin: str, destination: str, board_text: str, route_da
     if not _dataset_current(route_data, today):
         return None, [], route_data.get("stale_reason") or "The available route records are sample-only, incomplete, stale, or not verified for current service."
 
-    candidates = board_routes(board_text, route_data.get("routes", []), aliases, english_destination)
+    candidates = board_routes(matching_text, route_data.get("routes", []), aliases, english_destination)
     candidates = [route for route in candidates if route_is_current(route, today)]
     if not candidates:
         return None, [], "No current verified route record matches the destination shown on the board."
@@ -326,12 +331,13 @@ def _format_options(options: list[dict[str, Any]], scanned_route_id: str | None)
     return formatted[:3]
 
 
-def verify_journey(origin_input: str, destination_input: str, detected_text: str, route_data: dict[str, Any], confidence: str | None = None, *, english_destination: str | None = None) -> dict[str, Any]:
+def verify_journey(origin_input: str, destination_input: str, detected_text: str, route_data: dict[str, Any], confidence: str | None = None, *, english_destination: str | None = None, english_route: str | None = None) -> dict[str, Any]:
     today = date.today()
     aliases = route_data.get("stop_aliases", {})
-    parsed = parse_board_route(detected_text, aliases, english_destination)
+    matching_text = english_route.strip() if english_route and english_route.strip() else detected_text
+    parsed = parse_board_route(matching_text, aliases, english_destination)
     normalized = normalize_board_text(detected_text)
-    route, candidates, reason = find_matching_route(origin_input, destination_input, detected_text, route_data, english_destination=english_destination, today=today)
+    route, candidates, reason = find_matching_route(origin_input, destination_input, detected_text, route_data, english_destination=english_destination, english_route=english_route, today=today)
 
     if confidence and confidence.casefold() == "low":
         route = None
@@ -371,6 +377,7 @@ def verify_journey(origin_input: str, destination_input: str, detected_text: str
         "reason": message,
         "board_text_original": detected_text or "",
         "board_text_normalized": normalized,
+        "board_text_english": matching_text if english_route else None,
         "selected_origin": origin_input,
         "selected_destination": destination_input,
         "selected_origin_id": place_id(origin_name),

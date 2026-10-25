@@ -391,6 +391,7 @@ async def verify(
         route_data=ROUTE_DATA,
         confidence="low" if scan.get("recognition_uncertain") else None,
         english_destination=scan.get("destination_english"),
+        english_route=scan.get("route_english"),
     )
 
     result["scan"] = scan

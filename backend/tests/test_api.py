@@ -36,7 +36,7 @@ def test_health_routes_places_and_bus_data_contract():
 def test_verify_keeps_original_text_and_never_verifies_demo_route(monkeypatch):
     monkeypatch.setattr(main, "read_bus_board", AsyncMock(return_value={
         "detected_text": "THRISSUR", "original_transcription": "THRISSUR",
-        "destination_english": "Thrissur", "confidence": None,
+        "route_english": "Thrissur", "destination_english": "Thrissur", "confidence": None,
         "recognition_uncertain": False, "notes": "", "provider": "gemini", "demo_mode": False,
     }))
     with TestClient(main.app) as client:

@@ -95,12 +95,14 @@ from app import vision
 def test_normalise_result_preserves_original_script_and_does_not_invent_confidence():
     result = vision._normalise_result({
         "detected_text": "പാലക്കാട് - കന്യാകുമാരി",
-        "destination_english": "Palakkad - Kanyakumari",
+        "route_english": "Palakkad - Kanyakumari",
+        "destination_english": "Kanyakumari",
         "recognition_uncertain": False,
         "notes": "",
     })
     assert result["detected_text"] == "പാലക്കാട് - കന്യാകുമാരി"
     assert result["original_transcription"] == "പാലക്കാട് - കന്യാകുമാരി"
-    assert result["destination_english"] == "Palakkad - Kanyakumari"
+    assert result["route_english"] == "Palakkad - Kanyakumari"
+    assert result["destination_english"] == "Kanyakumari"
     assert result["confidence"] is None
     assert result["recognition_uncertain"] is False

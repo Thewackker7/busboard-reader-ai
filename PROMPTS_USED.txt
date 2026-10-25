@@ -1,0 +1,30 @@
+BusBoard Reader AI — AI Prompts Used
+
+1. Initial application prompt
+
+Build a web application called BusBoard Reader AI. Users should select an origin and destination, upload a bus destination-board image, and use Gemini AI to recognize the text. Use a React frontend and FastAPI backend. Keep Gemini API keys on the backend only.
+
+2. Route-verification prompt
+
+Fix the route-verification flow. Do not hardcode successful results or merely change UI text. Normalize bus-board text safely, resolve place aliases, and compare the selected origin and destination against ordered route-stop data. Return MATCH only when route data supports the journey in the correct direction; return UNABLE_TO_VERIFY for missing, stale, incomplete, or ambiguous data.
+
+3. Case-insensitive and OCR matching prompt
+
+Implement reusable normalization for Malayalam and English place names. Treat capitalization, extra spaces, hyphens, en dashes, slashes, and known spelling aliases as equivalent where appropriate. Preserve the original recognized text for display and debugging.
+
+4. Intermediate-stops prompt
+
+Support ordered intermediate stops instead of matching only route terminals. For a selected journey, show the segment of stops from the selected origin through the selected destination. Do not assume a reverse-direction route exists unless separately supported by route data.
+
+5. Gemini route-assistant prompt
+
+Use Gemini only to suggest likely major stops between two locations. Keep those suggestions separate from deterministic dataset verification. Clearly label Gemini-only suggestions as unverified and do not let Gemini override source-backed route records.
+
+6. Dataset and source prompt
+
+Use curated place and route datasets with aliases, ordered stops, provenance, freshness checks, and source links. Keep demo or sample records from verifying real journeys. Do not use data from sources that do not provide a suitable reuse license.
+
+7. Deployment prompt
+
+Deploy the React/Vite frontend and FastAPI backend on Vercel as separate projects. Configure VITE_API_BASE_URL in the frontend and FRONTEND_ORIGIN in the backend. Keep Gemini and Sarvam API keys in backend environment variables only.
+
